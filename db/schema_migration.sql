@@ -4,5 +4,5 @@ CREATE TABLE pokemon(
   id INTEGER PRIMARY KEY,
   name TEXT,
   type TEXT,
-  hp INTEGER DEFAULTS 60
+  hp INTEGER DEFAULT 60
 );
