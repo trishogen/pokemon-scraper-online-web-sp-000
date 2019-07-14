@@ -6,9 +6,6 @@ class Pokemon
   end
 
   def self.save(name, type, db)
-    if self.id
-      self.update
-    else
       sql = <<-SQL
         INSERT INTO pokemon (name, type)
         VALUES (?, ?)
@@ -19,8 +16,4 @@ class Pokemon
     end
   end
 
-  def update
-    sql = "UPDATE pokemon SET name = ?, type = ? where id = ?"
-    DB[:conn].execute(sql, self.name, self.type, self.id)
-  end
 end
