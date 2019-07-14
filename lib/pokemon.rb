@@ -5,7 +5,7 @@ class Pokemon
   def initialize(id:, name:, type:, db:)
   end
 
-  def self.save
+  def self.save(name, type, db)
     if self.id
       self.update
     else
@@ -14,8 +14,8 @@ class Pokemon
         VALUES (?, ?)
       SQL
 
-      DB[:conn].execute(sql, self.name, self.type)
-      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+      @db.execute(sql, name, type)
+      @id = @db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
     end
   end
 
