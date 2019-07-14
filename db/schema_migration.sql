@@ -5,5 +5,3 @@ CREATE TABLE pokemon(
   name TEXT,
   type TEXT
 );
-
-ALTER TABLE pokemon ADD COLUMN hp INTEGER default 60;
